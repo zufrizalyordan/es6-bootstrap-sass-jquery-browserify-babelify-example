@@ -11,9 +11,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            Hello world
             <a class="btn btn-primary js-btn-click">Button</a>
-            <div id="app"></div>
+            <div id="app">App container</div>
         </div>
     </div>
 </div>
