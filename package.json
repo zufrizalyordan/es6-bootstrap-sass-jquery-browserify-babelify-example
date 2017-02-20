@@ -1,0 +1,42 @@
+{
+  "name": "es6-babel-browserify-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sass": "./node_modules/.bin/node-sass --output-style compressed --include-path scss styles/style.scss -o ./dist",
+    "transpile:es": "./node_modules/.bin/babel --presets es2015,react scripts/ --out-dir scripts/transpiled/",
+    "browserify:transpiled": "./node_modules/.bin/browserify scripts/transpiled/app.js -o ./dist/app.js",
+    "build:assets": "npm run build:sass && npm run transpile:es && npm run browserify:transpiled"
+  },
+  "author": "zufrizalyordan@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
+    "browserify": "^14.1.0",
+    "browserify-shim": "^3.8.13",
+    "jquery": "^3.1.1",
+    "node-sass": "^4.5.0",
+    "rimraf": "^2.6.0"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js"
+  },
+  "browserify-shim": {
+    "jquery": "jQuery"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
+}
