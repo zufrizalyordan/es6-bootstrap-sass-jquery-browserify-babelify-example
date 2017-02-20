@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Test</title>
     <link rel="stylesheet" href="dist/style.css">
-    <script src="dist/app.js" type="text/javascript" charset="utf-8"></script>
+    <script src="dist/bundle.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 <div class="container">

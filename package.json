@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:sass": "./node_modules/.bin/node-sass --output-style compressed --include-path scss styles/style.scss -o ./dist",
-    "transpile:es": "./node_modules/.bin/babel --presets es2015,react scripts/ --out-dir scripts/transpiled/",
-    "browserify:transpiled": "./node_modules/.bin/browserify scripts/transpiled/app.js -o ./dist/app.js",
-    "build:assets": "npm run build:sass && npm run transpile:es && npm run browserify:transpiled"
+    "build:sass": "./node_modules/.bin/node-sass --output-style compressed --include-path scss ./styles/style.scss -o ./dist",
+    "browserify:babel": "./node_modules/.bin/browserify ./scripts/script.es6 -o ./dist/bundle.js -t [ babelify --presets [ es2015 react ] ]",
+    "clean:transpiled": "rimraf ./scripts/transpiled/*.js",
+    "clean:dist": "rimraf ./dist/*",
+    "build:assets": "npm run clean:dist && npm run clean:transpiled && npm run build:sass && npm run browserify:babel"
   },
   "author": "zufrizalyordan@gmail.com",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "babel-cli": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
+    "babelify": "^7.3.0",
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
     "browserify": "^14.1.0",
