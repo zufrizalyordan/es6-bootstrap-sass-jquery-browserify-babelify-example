@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:sass": "./node_modules/.bin/node-sass --output-style compressed --include-path scss ./styles/style.scss -o ./dist",
-    "browserify:babel": "./node_modules/.bin/browserify ./scripts/script.es6 -o ./dist/bundle.js -t [ babelify --presets [ es2015 react ] ]",
+    "browserify:babel": "./node_modules/.bin/browserify ./scripts/script.es6 -o ./dist/bundle.js -t [ babelify --compact=true --presets [ es2015 react ] ]",
     "clean:transpiled": "rimraf ./scripts/transpiled/*.js",
     "clean:dist": "rimraf ./dist/*",
-    "build:assets": "npm run clean:dist && npm run clean:transpiled && npm run build:sass && npm run browserify:babel"
+    "build:assets": "npm run clean:dist && npm run clean:transpiled && npm run build:sass && npm run browserify:babel "
   },
   "author": "zufrizalyordan@gmail.com",
   "license": "ISC",

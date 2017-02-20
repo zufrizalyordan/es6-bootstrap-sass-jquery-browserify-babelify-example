@@ -1,12 +1,12 @@
 import $ from 'jquery';
 import 'bootstrap';
-import TextUpdate from './text.es6';
+import UpdateAppText from './update-app-text.es6';
 
 $(() => {
-    const updateApp = (text) => {
-        $('#app').text(text);
-    };
+    UpdateAppText('js loaded');
 
-    updateApp('js loaded');
-    updateApp(TextUpdate("hello"));
+    $('body').on('click', '.js-btn-click', function(event) {
+        event.preventDefault();
+        UpdateAppText('Button click');
+    });
 });

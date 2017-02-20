@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-12">
             Hello world
-            <a class="btn btn-primary">Button</a>
+            <a class="btn btn-primary js-btn-click">Button</a>
             <div id="app"></div>
         </div>
     </div>
